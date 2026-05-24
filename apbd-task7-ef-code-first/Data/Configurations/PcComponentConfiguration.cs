@@ -12,5 +12,11 @@ public class PcComponentConfiguration : IEntityTypeConfiguration<PcComponent>
         builder.HasKey(p => new { p.PcId, p.ComponentCode });
         builder.Property(p => p.PcId)
             .HasColumnName("PCId");
+
+        builder.HasData(
+            new PcComponent { PcId = 1, ComponentCode = "CPU-RYZ-01", Amount = 1 },
+            new PcComponent { PcId = 2, ComponentCode = "GPU-RTX-01", Amount = 1 },
+            new PcComponent { PcId = 3, ComponentCode = "RAM-DDR-01", Amount = 2 }
+        );
     }
 }

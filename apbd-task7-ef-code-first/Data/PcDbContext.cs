@@ -10,7 +10,7 @@ public class PcDbContext : DbContext
     public DbSet<ComponentType> ComponentTypes => Set<ComponentType>();
     public DbSet<PcComponent> PcComponents => Set<PcComponent>();
     public DbSet<ComponentManufacturer> ComponentManufacturers => Set<ComponentManufacturer>();
-    
+
     public PcDbContext(DbContextOptions<PcDbContext> options) : base(options)
     {
     }

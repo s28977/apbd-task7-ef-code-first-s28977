@@ -13,5 +13,29 @@ public class ComponentManufacturerConfiguration : IEntityTypeConfiguration<Compo
 
         builder.Property(c => c.FullName)
             .HasMaxLength(300);
+        
+        builder.HasData(
+            new ComponentManufacturer
+            {
+                Id = 1,
+                Abbreviation = "AMD",
+                FullName = "Advanced Micro Devices, Inc.",
+                FoundationDate = new DateOnly(1969, 5, 1)
+            },
+            new ComponentManufacturer
+            {
+                Id = 2,
+                Abbreviation = "NVDA",
+                FullName = "NVIDIA Corporation",
+                FoundationDate = new DateOnly(1993, 4, 5)
+            },
+            new ComponentManufacturer
+            {
+                Id = 3,
+                Abbreviation = "CRC",
+                FullName = "Crucial / Micron Technology",
+                FoundationDate = new DateOnly(1978, 10, 5)
+            }
+        );
     }
 }
