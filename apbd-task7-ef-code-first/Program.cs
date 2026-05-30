@@ -1,4 +1,5 @@
 using apbd_task7_ef_code_first.Data;
+using apbd_task7_ef_code_first.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -11,6 +12,8 @@ var connectionString = builder.Configuration
 
 builder.Services.AddDbContext<PcDbContext>(options => 
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IPcsService, PcsService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
